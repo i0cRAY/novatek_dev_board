@@ -11,7 +11,7 @@
   依 spec.md 第 5 節建立 `board/comm/`、`board/perception/`、`tools/`、`tests/` 資料夾與空的 `__init__.py`。
   完成條件：資料夾結構與 spec 一致。
 
-- [ ] **0.2 環境與相依套件**
+- [x] **0.2 環境與相依套件**
   建立 `pyproject.toml`（相依：numpy、opencv-python；dev：pytest），讓 `pip install -e ".[dev]"` 後任何位置都能 `import board`；加一個冒煙測試（smoke test，只確認 `import board` 成功）；README 寫安裝步驟。
   完成條件：新環境照 README 能裝好，`pytest` 通過（至少 1 個測試，pytest 沒收集到測試時會回傳失敗）。
 

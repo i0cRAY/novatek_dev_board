@@ -15,3 +15,18 @@
 - 投放前確認：移動物體偵測、人物偵測
 - 水池判斷：影像分割模型
 - 回傳：檢查結果與心跳
+
+## 安裝
+
+需要 Python 3.10 以上。
+
+```bash
+git clone <repo 網址>
+cd novatek_dev_board
+python3 -m venv .venv            # 建立虛擬環境（獨立的 Python 套件空間）
+source .venv/bin/activate        # 啟用虛擬環境（Windows：.venv\Scripts\activate）
+pip install -e ".[dev]"          # 安裝本專案與相依套件（numpy、opencv-python、pytest）
+pytest                           # 執行測試，應顯示 passed
+```
+
+`-e` 代表「可編輯安裝」：修改 `board/` 裡的程式後不需要重新安裝。

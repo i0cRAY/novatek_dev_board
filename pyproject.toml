@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "novatek-dev-board"
+version = "0.1.0"
+description = "XR 無人機救災物資投放專案：開發板感知模組"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "opencv-python",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[tool.setuptools.packages.find]
+include = ["board*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
