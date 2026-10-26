@@ -7,7 +7,7 @@
 
 ## M0：專案準備
 
-- [ ] **0.1 建立 repo 結構**
+- [x] **0.1 建立 repo 結構**
   依 spec.md 第 5 節建立 `board/comm/`、`board/perception/`、`tools/`、`tests/` 資料夾與空的 `__init__.py`。
   完成條件：資料夾結構與 spec 一致。
 
