@@ -10,6 +10,9 @@ from board.config import (
     CHECK_ALTITUDE,
     DROP_ALTITUDE,
     DROP_AREA,
+    DROP_DRIFT,
+    HOVER_POS_ERROR,
+    PAYLOAD_SIZE,
     SCORE_WEIGHTS,
 )
 
@@ -21,6 +24,19 @@ def test_altitudes() -> None:
 def test_drop_area() -> None:
     assert len(DROP_AREA) == 2
     assert all(side > 0 for side in DROP_AREA)
+
+
+def test_drop_area_formula() -> None:
+    """投放面積 = 物資大小 + 2 ×（位置誤差 + 落下偏移）。"""
+    margin = 2 * (HOVER_POS_ERROR + DROP_DRIFT)
+    assert DROP_AREA[0] == pytest.approx(PAYLOAD_SIZE[0] + margin)
+    assert DROP_AREA[1] == pytest.approx(PAYLOAD_SIZE[1] + margin)
+
+
+def test_drop_area_fits_in_view_at_drop_altitude() -> None:
+    """在投放高度時，相機正下方拍到的地面寬度要能涵蓋整個投放區域。"""
+    view_width = 2 * DROP_ALTITUDE * np.tan(np.radians(CAMERA_HFOV_DEG / 2))
+    assert max(DROP_AREA) < view_width
 
 
 def test_score_weights_sum_to_one() -> None:

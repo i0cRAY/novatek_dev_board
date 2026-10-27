@@ -14,8 +14,21 @@ DROP_ALTITUDE: float = 3.0
 
 # ── 地面檢查 ─────────────────────────────────────────────
 
-# 投放需要的地面面積（長, 寬），m。task 0.4 依物資大小與誤差重新計算
-DROP_AREA: tuple[float, float] = (1.0, 1.0)
+# 物資箱大小（長, 寬），m。暫定估計值，待使用者確認
+PAYLOAD_SIZE: tuple[float, float] = (0.4, 0.4)
+
+# 懸停位置誤差：無人機懸停時偏離目標的距離（m）。暫定估計值，待吳泯蓁確認
+HOVER_POS_ERROR: float = 0.3
+
+# 落下偏移：從投放高度落下時因風、彈跳造成的偏移（m）。暫定估計值，待使用者確認
+DROP_DRIFT: float = 0.2
+
+# 投放需要的地面面積（長, 寬），m
+# = 物資大小 + 2 ×（位置誤差 + 落下偏移），乘 2 是因為兩側都可能偏
+DROP_AREA: tuple[float, float] = (
+    PAYLOAD_SIZE[0] + 2 * (HOVER_POS_ERROR + DROP_DRIFT),
+    PAYLOAD_SIZE[1] + 2 * (HOVER_POS_ERROR + DROP_DRIFT),
+)
 
 # 坡度上限（度）
 MAX_SLOPE_DEG: float = 10.0
