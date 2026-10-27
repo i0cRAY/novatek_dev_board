@@ -267,15 +267,7 @@ M1 完成即可作為課程 GitHub 提交。
 
 ## 12. 待確認事項（TBD）
 
-- [ ] 深度相機 FOV、量測範圍、安裝位置（Gazebo：王邑安）
-- [ ] 深度圖改為 320 × 240、時間戳用 Unix 時間（Gazebo：王邑安）
-- [ ] 鏡頭畫面 GStreamer pipeline、port（Gazebo：王邑安）
-- [ ] 場景中加入斜坡、障礙物、移動人物、水池（Gazebo：王邑安）
-- [ ] Python Server 負責人，確認 UDP JSON 格式（含 `error` 欄位與重送規則）
-- [ ] 各電腦時鐘同步方式（NTP / chrony）
-- [ ] 檢查高度與投放高度（飛控：吳泯蓁）
-- [ ] 不安全時等待多久讓操作員改選（XR：黃書昱）
-- [ ] 聯詠開發板型號與 NPU SDK
+見 `docs/questions.md`。
 
 ## 13. 變更紀錄
 
