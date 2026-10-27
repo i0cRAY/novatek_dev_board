@@ -15,7 +15,7 @@
   建立 `pyproject.toml`（相依：numpy、opencv-python；dev：pytest），讓 `pip install -e ".[dev]"` 後任何位置都能 `import board`；加一個冒煙測試（smoke test，只確認 `import board` 成功）；README 寫安裝步驟。
   完成條件：新環境照 README 能裝好，`pytest` 通過（至少 1 個測試，pytest 沒收集到測試時會回傳失敗）。
 
-- [ ] **0.3 建立 `config.py`**
+- [x] **0.3 建立 `config.py`**
   把 spec.md 第 7 節所有參數寫進去，TBD 項目先填暫定值並加註解。
   完成條件：其他模組能 `from board.config import ...`。
 
@@ -29,6 +29,7 @@
 
 - [ ] **1.1 假深度圖來源 `tools/fake_depth_sender.py`**
   依 spec 4.1 格式送出 320×240 float32 深度圖：平地 10 m、一個移動方塊、雜訊、一小塊 `inf`；時間戳用 `time.time()`。
+  第 4 節的 port（5000、6000、6001）與心跳逾時（3 s）加入 config.py，並補進 spec 第 7 節。
   完成條件：執行後等待連線，連線後持續以約 10 FPS 送出。
 
 - [ ] **1.2 深度圖接收 `board/comm/depth_receiver.py`**
