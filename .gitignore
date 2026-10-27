@@ -8,3 +8,6 @@ __pycache__/
 .venv/
 venv/
 .pytest_cache/
+
+# 本機待問事項（不上傳）
+docs/questions.md
